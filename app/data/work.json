@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Autonomous Systems Engineering",
+    "description": "We design and implement autonomous physical systems that operate under uncertainty.",
+    "image": "/images/work1.png"
+  },
+  {
+    "title": "Industrial & IoT System Stabilization",
+    "description": "Many industrial systems break frequently and require constant human intervention.",
+    "image": "/images/work2.png"
+  },
+  {
+    "title": "Edge & Control Architecture Design",
+    "description": "Architecture design for systems where decisions must occur at the physical world.",
+    "image": "/images/work3.png"
+  },
+  {
+    "title": "Technical Diagnostics & Risk Reviews",
+    "description": "Short diagnostic engagements to understand why a system behaves unpredictably.",
+    "image": "/images/work4.png"
+  }
+]

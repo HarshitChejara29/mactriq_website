@@ -1,7 +1,7 @@
 [
-  { "logo": "/images/next.svg" },
-  { "logo": "/images/react.svg" },
-  { "logo": "/images/node.svg" },
-  { "logo": "/images/aws.svg" },
-  { "logo": "/images/python.svg" }
+  { "logo": "/tech/next.png" },
+  { "logo": "/tech/react.png" },
+  { "logo": "/tech/node.png" },
+  { "logo": "/tech/aws.png" },
+  { "logo": "/tech/python.png" }
 ]

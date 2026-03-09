@@ -1,29 +1,63 @@
-// import testimonials from "../data/testimonials.json"
+"use client";
 
-// export default function Testimonials() {
-//   return (
-//     <section className="py-24 bg-gray-50">
+import Image from "next/image";
+import data from "../data/testimonials.json";
 
-//       <h2 className="text-center text-3xl font-semibold mb-14">
-//         Testimonials
-//       </h2>
+export default function Testimonials() {
+  const testimonials = [...data.testimonials, ...data.testimonials];
 
-//       <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
+  return (
+    <section className="py-24 bg-[#f7f9fb] overflow-hidden">
 
-//         {testimonials.map((t, i) => (
-//           <div key={i} className="bg-white p-6 rounded-xl shadow-sm">
+      {/* Title */}
+      <h2 className="text-center text-5xl font-semibold text-[#2c4a63] mb-16">
+        Testimonials
+      </h2>
 
-//             <h4 className="font-semibold">{t.name}</h4>
+      {/* Slider */}
+      <div className="relative w-full overflow-hidden">
 
-//             <p className="text-sm text-gray-500 mt-3">
-//               {t.review}
-//             </p>
+        <div className="flex gap-8 animate-marquee w-max">
 
-//           </div>
-//         ))}
+          {testimonials.map((item, index) => (
+            <div
+              key={index}
+              className="min-w-[420px] bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
+            >
 
-//       </div>
+              {/* User */}
+              <div className="flex items-center gap-4 mb-4">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
 
-//     </section>
-//   )
-// }
+                <div>
+                  <p className="font-semibold text-[#2c4a63]">{item.name}</p>
+                  <p className="text-sm text-gray-500">{item.date}</p>
+                </div>
+              </div>
+
+              {/* Stars */}
+              <div className="flex text-yellow-400 mb-4 text-lg">
+                ★★★★★
+              </div>
+
+              {/* Review */}
+              <p className="text-[#5c7387] leading-relaxed">
+                {item.review}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
+
+      </div>
+
+    </section>
+  );
+}

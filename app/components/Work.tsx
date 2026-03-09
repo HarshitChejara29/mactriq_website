@@ -1,53 +1,68 @@
-import work from "../data/work.json"
-import Image from "next/image"
+import Image from "next/image";
 
-export default function Work() {
+export default function HowWeWork() {
   return (
-    <section className="py-24 max-w-6xl mx-auto">
+    <section className="py-24 bg-[#f7f9fb]">
+      <div className="max-w-7xl mx-auto px-6">
 
-      <h2 className="text-3xl text-center font-semibold mb-16">
-        What We Work On
-      </h2>
+        {/* TOP CARD */}
+        <div className="bg-white border border-gray-200 rounded-3xl p-12">
 
-      <div className="space-y-16">
+          <h2 className="text-5xl font-semibold text-[#2c4a63] mb-6">
+            How We Work
+          </h2>
 
-        {work.map((item, index) => (
-          <div
-            key={index}
-            className={`flex items-center gap-10 ${
-              index % 2 === 0 ? "" : "flex-row-reverse"
-            }`}
-          >
+          <p className="text-xl text-[#3b566e] max-w-4xl leading-relaxed">
+            We prefer finished or running systems over talking about ideas.
+            We work closely with operators and engineers, and avoid
+            hype-driven approaches.
+          </p>
 
-            <div className="flex-1">
-              <h3 className="text-xl font-semibold">
-                {item.title}
-              </h3>
+          {/* Divider */}
+          <div className="my-10 border-t border-gray-200"></div>
 
-              <p className="mt-4 text-gray-500">
-                {item.description}
+          {/* Bottom Info */}
+          <div className="flex items-center justify-between">
+
+            <div>
+              <p className="font-semibold text-lg text-[#2c4a63]">
+                Aditya Sharma
               </p>
-
-              <button className="mt-4 text-blue-500">
-                Get in touch →
-              </button>
+              <p className="text-[#6c7a89]">Founder & CEO</p>
             </div>
 
-            <div className="flex-1">
-              <Image
-                src={item.image}
-                alt=""
-                width={600}
-                height={400}
-                className="rounded-xl"
-              />
-            </div>
+            {/* Logo */}
+            <Image
+              src="/logo-icon.png"
+              alt="logo"
+              width={40}
+              height={40}
+            />
 
           </div>
-        ))}
+        </div>
+
+        {/* STATS */}
+        <div className="grid md:grid-cols-3 gap-6 mt-10">
+
+          <div className="bg-white border border-gray-200 rounded-2xl py-10 text-center">
+            <h3 className="text-4xl font-semibold text-[#2c4a63]">98%</h3>
+            <p className="mt-2 text-[#6c7a89]">Satisfaction Rate</p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-2xl py-10 text-center">
+            <h3 className="text-4xl font-semibold text-[#2c4a63]">3X</h3>
+            <p className="mt-2 text-[#6c7a89]">Faster Decision-Making</p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-2xl py-10 text-center">
+            <h3 className="text-4xl font-semibold text-[#2c4a63]">40%</h3>
+            <p className="mt-2 text-[#6c7a89]">Cost Reduction</p>
+          </div>
+
+        </div>
 
       </div>
-
     </section>
-  )
+  );
 }

@@ -1,6 +1,8 @@
+import { Linkedin, Instagram } from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 mt-20">
+    <footer className="bg-gray-50">
       <div className="max-w-7xl mx-auto px-0">
 
         <div className="grid grid-cols-1 md:grid-cols-2 py-14">
@@ -18,8 +20,10 @@ export default function Footer() {
           </div>
 
           {/* RIGHT SECTION */}
-          <div className="md:pl-20 mt-10 md:mt-0">
-            <div className="grid grid-cols-2 gap-10">
+          <div className="md:pl-20 mt-10 md:mt-0 ml-auto">
+            <div className="grid grid-cols-3 gap-10">
+
+              <div></div>
 
               {/* Page Links */}
               <div>
@@ -35,10 +39,32 @@ export default function Footer() {
 
               {/* Social */}
               <div>
-                <p className="text-[#6C7A89] text-sm mb-4">Page links</p>
+                <p className="text-[#6C7A89] text-sm mb-4">Social</p>
+
                 <ul className="space-y-3 text-[#1F3F5C]">
-                  <li className="flex items-center gap-2 hover:text-blue-500 transition-colors cursor-pointer">Linkedin</li>
-                  <li className="flex items-center gap-2 hover:text-blue-500 transition-colors cursor-pointer">Instagram</li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/mactriq/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 hover:text-blue-500 transition-colors"
+                    >
+                      <Linkedin size={18} />
+                      Linkedin
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://www.instagram.com/mactriq/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+                    >
+                      <Instagram size={18} />
+                      Instagram
+                    </a>
+                  </li>
                 </ul>
               </div>
 

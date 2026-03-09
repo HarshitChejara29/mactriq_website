@@ -1,0 +1,20 @@
+{
+  "faqs": [
+    {
+      "question": "Who is Mactriq for?",
+      "answer": "Teams operating real-world autonomous, industrial, or edge-controlled systems."
+    },
+    {
+      "question": "What problems do you work on?",
+      "answer": "System instability, unreliable automation, and failures requiring human intervention."
+    },
+    {
+      "question": "Do you work on early-stage ideas?",
+      "answer": "No. We prefer deployed or running systems over conceptual work."
+    },
+    {
+      "question": "How do engagements start?",
+      "answer": "Just be ready to share your brand assets (like a brand guide or source files), and the project can move forward smoothly."
+    }
+  ]
+}

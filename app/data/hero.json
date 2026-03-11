@@ -1,5 +1,8 @@
 {
-  "title": "Autonomous Systems Built for the Real World.",
-  "description": "We work on systems where sensor noise, hardware failure, and environmental uncertainty are normal — not exceptions.",
-  "button": "Get Start Today"
+  "titleLine1": "Autonomous Systems",
+  "titleLine2": "Built for the Real World.",
+  "description": "We design and stabilize autonomous physical systems that operate reliably in real industrial environments.",
+  "button": "Book a Consultation",
+  "buttonLink": "https://calendly.com/mactriq/",
+  "background": "/hero-background.png"
 }

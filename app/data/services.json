@@ -1,14 +1,50 @@
-[
-  {
-    "title": "UI/UX Design",
-    "desc": "Crafting user friendly and visually stunning interfaces."
-  },
-  {
-    "title": "Web Development",
-    "desc": "Building fast and scalable websites."
-  },
-  {
-    "title": "Product Strategy",
-    "desc": "Helping brands plan and execute digital products."
-  }
-]
+{
+  "services": [
+    {
+      "title": "Autonomous Systems Engineering",
+      "description": "We design and implement autonomous physical systems that operate under uncertainty.",
+      "image": "/services/service1.png",
+      "points": [
+        "closed-loop control systems",
+        "edge-first architectures",
+        "sensor fusion and telemetry",
+        "fault detection and recovery",
+        "safely reducing human intervention"
+      ]
+    },
+    {
+      "title": "Industrial & IoT System Stabilization",
+      "description": "Many industrial and IoT systems technically work, but require constant human intervention to keep running.",
+      "image": "/services/service2.png",
+      "points": [
+        "diagnose instability and failure modes",
+        "harden control logic and state handling",
+        "reduce crashes, resets, and manual overrides",
+        "improve uptime and operational confidence"
+      ]
+    },
+    {
+      "title": "Edge & Control Architecture Design",
+      "description": "Architecture design for systems where decisions must be made close to the physical world.",
+      "image": "/services/service3.png",
+      "points": [
+        "embedded and edge controllers",
+        "real-time event handling",
+        "telemetry pipelines",
+        "cloud-edge coordination",
+        "safety and fallback paths"
+      ]
+    },
+    {
+      "title": "Technical Diagnostics & Risk Reviews",
+      "description": "Short, paid diagnostic engagements to understand why a system behaves unpredictably or requires manual supervision.",
+      "image": "/services/service4.png",
+      "points": [
+        "clear failure-mode analysis",
+        "automation feasibility boundaries",
+        "explicit non-automation recommendations",
+        "prioritized next steps"
+      ]
+    }
+  ]
+}

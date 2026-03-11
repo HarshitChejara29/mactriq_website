@@ -1,31 +1,97 @@
-import services from "../data/services.json";
+"use client"
+
+import Image from "next/image"
+import servicesData from "../data/services.json"
+import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function Services() {
+
   return (
-    <section className="px-10 py-24 max-w-6xl mx-auto">
+    <section className="py-24 bg-[#f7f9fc] lg:px-0 px-4" id="services">
+      <div className="max-w-7xl mx-auto">
 
-      <h2 className="text-4xl font-semibold mb-12">
-        Services
-      </h2>
+        <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-semibold text-[#1F3F5C] lg:mb-20 mb-10">
+          What We Work On
+        </h2>
 
-      <div className="grid md:grid-cols-3 gap-10">
+        {/* spacing controls stacking distance */}
+        <div className="space-y-[220px]">
 
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="border border-neutral-800 p-6 rounded-xl"
-          >
-            <h3 className="text-xl font-semibold">
-              {service.title}
-            </h3>
+          {servicesData.services.map((service, index) => {
 
-            <p className="text-neutral-400 mt-4">
-              {service.desc}
-            </p>
-          </div>
-        ))}
+            const isReverse = index % 2 !== 0
+
+            return (
+
+              <div key={index} className="sticky top-24">
+
+                <motion.div
+                  initial={{ opacity: 0, y: 120, scale: 0.92 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.25, 0.46, 0.45, 0.94] // smooth easing
+                  }}
+                  viewport={{ once: false, margin: "-120px" }}
+                  className={`flex flex-col lg:flex-row items-center gap-14 bg-white rounded-2xl shadow-xl lg:p-16 p-8 border border-gray-200
+                  ${isReverse ? "lg:flex-row-reverse" : ""}`}
+                >
+
+                  {/* TEXT */}
+                  <div className="flex-1">
+
+                    <h3 className="lg:text-4xl text-3xl font-semibold mb-4 text-[#1F3F5C]">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-[#1F3F5C] mb-6">
+                      {service.description}
+                    </p>
+
+                    <ul className="space-y-3">
+                      {service.points.map((point, i) => (
+                        <li key={i} className="flex items-center gap-2 text-[#1F3F5C] text-sm">
+
+                          <span className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">
+                            ✓
+                          </span>
+
+                          {point}
+
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link href="/contact"><button className="mt-6 text-blue-600 font-medium cursor-pointer">
+                      Get in touch →
+                    </button></Link>
+
+                  </div>
+
+                  {/* IMAGE */}
+                  <div className="flex-1">
+
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      width={600}
+                      height={400}
+                      className="rounded-xl shadow"
+                    />
+
+                  </div>
+
+                </motion.div>
+
+              </div>
+
+            )
+          })}
+
+        </div>
 
       </div>
     </section>
-  );
+  )
 }

@@ -1,31 +1,56 @@
-import Image from "next/image"
-import tech from "../data/techstack.json"
+"use client";
+
+import Image from "next/image";
+import tech from "../data/techstack.json";
 
 export default function TechStack() {
-  const logos = [...tech, ...tech, ...tech] // duplicate for infinite scroll
 
   return (
     <section className="border border-gray-100 bg-white/70 backdrop-blur-md py-6 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto flex items-center gap-10">
+      <style jsx>{`
+        @keyframes marqueeScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
 
-        <p className="text-[#1F3F5C] w-[220px]">
+        .marquee {
+          display: flex;
+          width: max-content;
+          animation: marqueeScroll 25s linear infinite;
+        }
+      `}</style>
+
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10 px-4">
+
+        {/* Text */}
+        <p className="text-[#1F3F5C] text-center md:text-left md:w-[220px] text-sm md:text-base">
           We work with modern technologies, including
         </p>
 
-        <div className="flex overflow-hidden flex-1">
+        {/* Logos */}
+        <div className="relative w-full overflow-hidden">
 
-          <div className="flex items-center gap-5 animate-marquee">
+          <div className="marquee gap-12 md:gap-24">
 
-            {logos.map((item, index) => (
-              <div key={index} className="flex items-center opacity-70">
+            {[...tech, ...tech].map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 opacity-70 flex items-center justify-center"
+              >
+
                 <Image
                   src={item.logo}
                   alt={item.logo}
-                  width={110}
-                  height={80}
-                  className="w-auto h-auto"
+                  width={60}
+                  height={40}
+                  className="object-contain md:w-[70px]"
                 />
+
               </div>
             ))}
 
@@ -36,5 +61,5 @@ export default function TechStack() {
       </div>
 
     </section>
-  )
+  );
 }

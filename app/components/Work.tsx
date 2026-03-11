@@ -1,66 +1,107 @@
+"use client"
+
 import Image from "next/image";
+import data from "../data/work.json";
+import { motion, Variants } from "framer-motion";
 
-export default function HowWeWork() {
+export default function Work() {
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
-    <section className="py-24 bg-[#f7f9fb]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-20 md:py-24 bg-[#f7f9fb]" id="work">
+      <div className="max-w-7xl mx-auto lg:px-0 px-4">
 
-        {/* TOP CARD */}
-        <div className="bg-white border border-gray-200 rounded-3xl p-12">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, margin: "-120px" }}
+        >
 
-          <h2 className="text-5xl font-semibold text-[#2c4a63] mb-6">
-            How We Work
-          </h2>
+          {/* TOP CARD */}
+          <motion.div
+            variants={item}
+            className="bg-white border border-gray-200 rounded-3xl p-6 md:p-10 lg:p-12"
+          >
 
-          <p className="text-xl text-[#3b566e] max-w-4xl leading-relaxed">
-            We prefer finished or running systems over talking about ideas.
-            We work closely with operators and engineers, and avoid
-            hype-driven approaches.
-          </p>
+            <h2 className="text-3xl md:text-5xl font-semibold text-[#1F3F5C] mb-6">
+              {data.title}
+            </h2>
 
-          {/* Divider */}
-          <div className="my-10 border-t border-gray-200"></div>
+            <p className="text-[#1F3F5C] max-w-4xl leading-relaxed text-sm md:text-base">
+              {data.description}
+            </p>
 
-          {/* Bottom Info */}
-          <div className="flex items-center justify-between">
+            {/* Divider */}
+            <div className="my-8 md:my-10 border-t border-gray-200"></div>
 
-            <div>
-              <p className="font-semibold text-lg text-[#2c4a63]">
-                Aditya Sharma
-              </p>
-              <p className="text-[#6c7a89]">Founder & CEO</p>
+            {/* Bottom Info */}
+            <div className="flex items-center justify-between">
+
+              <div>
+                <p className="font-semibold text-[#1F3F5C]">
+                  {data.founder.name}
+                </p>
+                <p className="text-[#6C7A89] text-sm">
+                  {data.founder.role}
+                </p>
+              </div>
+
+              <Image
+                src={data.founder.logo}
+                alt="logo"
+                width={30}
+                height={30}
+              />
+
             </div>
 
-            {/* Logo */}
-            <Image
-              src="/logo-icon.png"
-              alt="logo"
-              width={40}
-              height={40}
-            />
+          </motion.div>
+
+          {/* STATS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-6">
+
+            {data.stats.map((itemStat, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="bg-white border border-gray-200 rounded-2xl py-8 md:py-10 text-center"
+              >
+
+                <h3 className="text-3xl md:text-4xl font-semibold text-[#1F3F5C]">
+                  {itemStat.value}
+                </h3>
+
+                <p className="mt-2 text-[#6c7a89] text-sm md:text-base">
+                  {itemStat.label}
+                </p>
+
+              </motion.div>
+            ))}
 
           </div>
-        </div>
 
-        {/* STATS */}
-        <div className="grid md:grid-cols-3 gap-6 mt-10">
-
-          <div className="bg-white border border-gray-200 rounded-2xl py-10 text-center">
-            <h3 className="text-4xl font-semibold text-[#2c4a63]">98%</h3>
-            <p className="mt-2 text-[#6c7a89]">Satisfaction Rate</p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-2xl py-10 text-center">
-            <h3 className="text-4xl font-semibold text-[#2c4a63]">3X</h3>
-            <p className="mt-2 text-[#6c7a89]">Faster Decision-Making</p>
-          </div>
-
-          <div className="bg-white border border-gray-200 rounded-2xl py-10 text-center">
-            <h3 className="text-4xl font-semibold text-[#2c4a63]">40%</h3>
-            <p className="mt-2 text-[#6c7a89]">Cost Reduction</p>
-          </div>
-
-        </div>
+        </motion.div>
 
       </div>
     </section>

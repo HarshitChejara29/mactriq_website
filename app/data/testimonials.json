@@ -1,22 +1,46 @@
 {
   "testimonials": [
     {
-      "name": "Ankit Verma",
+      "name": "Pastel Studio Photography",
       "date": "October 2023",
-      "image": "/testimonials/user1.jpg",
-      "review": "Their understanding of edge constraints and real-world sensor noise was immediately apparent. Very engineering-driven engagement."
+      "image": "/testimonials/ankit_verma.png",
+      "review": "Elegant, fast, and easy to navigate—our website is now picture-perfect for our clients."
     },
     {
-      "name": "Divyesh Shah",
+      "name": "RK Cotton Waste",
       "date": "December 2023",
-      "image": "/testimonials/user2.jpg",
-      "review": "Our system technically worked, but required constant operator intervention. Mactriq helped stabilize it and significantly reduced manual overrides."
+      "image": "/testimonials/divyesh_sharma.png",
+      "review": "Mactriq modernized our digital presence both inside and out with exceptional results."
     },
     {
-      "name": "Rahul Mehta",
+      "name": "Surya Profile Industries",
+      "date": "July 2024",
+      "image": "/testimonials/deepshika_seth.png",
+      "review": "A modern, efficient platform that has truly transformed our business operations."
+    },
+    {
+      "name": "Tejash Fashion",
       "date": "March 2024",
-      "image": "/testimonials/user3.jpg",
-      "review": "Mactriq helped us identify control issues that had gone unnoticed for months. The diagnostic was precise and grounded in how the system behaved."
+      "image": "/testimonials/rahul_mehta.png",
+      "review": "Sophisticated digital transformation delivered with precision, speed, and professionalism."
+    },
+    {
+      "name": "Desmania Design Studio",
+      "date": "May 2024",
+      "image": "/testimonials/juhi_sahani.png",
+      "review": "Sleek, speedy, and tailored—our website now perfectly matches our design philosophy."
+    },
+    {
+      "name": "Accountant AI",
+      "date": "May 2024",
+      "image": "/testimonials/juhi_sahani.png",
+      "review": "A brilliant partner who engineered our complete machine learning-powered accounting system from the ground up."
+    },
+    {
+      "name": "TLHS India",
+      "date": "May 2024",
+      "image": "/testimonials/juhi_sahani.png",
+      "review": "Our people management systems are now stronger, faster, and fully connected—thanks to Mactriq."
     }
   ]
 }

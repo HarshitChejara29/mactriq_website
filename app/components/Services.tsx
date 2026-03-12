@@ -8,15 +8,15 @@ import Link from "next/link"
 export default function Services() {
 
   return (
-    <section className="py-24 bg-[#f7f9fc] lg:px-0 px-4" id="services">
+    <section className="py-16 lg:py-24 bg-[#f7f9fc] px-4 lg:px-0" id="services">
       <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-semibold text-[#1F3F5C] lg:mb-20 mb-10">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#1F3F5C] mb-12 lg:mb-20">
           What We Work On
         </h2>
 
-        {/* spacing controls stacking distance */}
-        <div className="space-y-[220px]">
+        {/* spacing */}
+        <div className="space-y-16 lg:space-y-[220px]">
 
           {servicesData.services.map((service, index) => {
 
@@ -24,36 +24,37 @@ export default function Services() {
 
             return (
 
-              <div key={index} className="sticky top-24">
+              <div key={index} className="lg:sticky lg:top-24">
 
                 <motion.div
                   initial={{ opacity: 0, y: 120, scale: 0.92 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{
                     duration: 0.8,
-                    ease: [0.25, 0.46, 0.45, 0.94] // smooth easing
+                    ease: [0.25, 0.46, 0.45, 0.94]
                   }}
                   viewport={{ once: false, margin: "-120px" }}
-                  className={`flex flex-col lg:flex-row items-center gap-14 bg-white rounded-2xl shadow-xl lg:p-16 p-8 border border-gray-200
+                  className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-14 bg-white rounded-2xl shadow-xl border border-gray-200
+                  p-6 sm:p-8 lg:p-16
                   ${isReverse ? "lg:flex-row-reverse" : ""}`}
                 >
 
                   {/* TEXT */}
                   <div className="flex-1">
 
-                    <h3 className="lg:text-4xl text-3xl font-semibold mb-4 text-[#1F3F5C]">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 text-[#1F3F5C]">
                       {service.title}
                     </h3>
 
-                    <p className="text-[#1F3F5C] mb-6">
+                    <p className="text-[#1F3F5C] mb-6 text-sm sm:text-base leading-relaxed">
                       {service.description}
                     </p>
 
                     <ul className="space-y-3">
                       {service.points.map((point, i) => (
-                        <li key={i} className="flex items-center gap-2 text-[#1F3F5C] text-sm">
+                        <li key={i} className="flex items-start gap-2 text-[#1F3F5C] text-sm sm:text-base">
 
-                          <span className="w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">
+                          <span className="mt-1 w-4 h-4 rounded-full bg-green-500 flex items-center justify-center text-white text-xs shrink-0">
                             ✓
                           </span>
 
@@ -63,21 +64,23 @@ export default function Services() {
                       ))}
                     </ul>
 
-                    <Link href="/contact"><button className="mt-6 text-blue-600 font-medium cursor-pointer">
-                      Get in touch →
-                    </button></Link>
+                    <Link href="/contact">
+                      <button className="mt-6 text-blue-600 font-medium cursor-pointer">
+                        Get in touch →
+                      </button>
+                    </Link>
 
                   </div>
 
                   {/* IMAGE */}
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
 
                     <Image
                       src={service.image}
                       alt={service.title}
                       width={600}
                       height={400}
-                      className="rounded-xl shadow"
+                      className="rounded-xl shadow w-full h-auto"
                     />
 
                   </div>

@@ -31,7 +31,7 @@ export default function ContactPage() {
     <>
       <CTASection />
 
-      <section className="py-16 md:py-20 lg:px-0 px-4">
+      <section className="py-16 md:py-20 lg:px-0 px-4 bg-white">
         <motion.div
           variants={container}
           initial="hidden"

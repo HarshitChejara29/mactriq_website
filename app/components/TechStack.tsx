@@ -6,7 +6,7 @@ import tech from "../data/techstack.json";
 export default function TechStack() {
 
   return (
-    <section className="border border-gray-100 bg-white/70 backdrop-blur-md py-6 overflow-hidden">
+    <section className="border border-gray-100 bg-white backdrop-blur-md py-6 overflow-hidden">
 
       <style jsx>{`
         @keyframes marqueeScroll {

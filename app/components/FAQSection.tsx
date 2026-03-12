@@ -34,7 +34,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 lg:px-0 px-4 " id="faqs">
+    <section className="py-20 md:py-28 lg:px-0 px-4 bg-white" id="faqs">
 
       <motion.div
         variants={container}

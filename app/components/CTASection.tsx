@@ -59,7 +59,7 @@ export default function CTASection() {
           <Link href={cta.buttonLink} target="_blank">
             <button
               className="mt-6 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-medium
-              bg-gradient-to-r from-blue-500 to-blue-400
+              bg-gradient-to-r from-blue-500 to-blue-400 cursor-pointer
               hover:scale-105 transition-transform duration-300 shadow-lg"
             >
               {cta.buttonText}

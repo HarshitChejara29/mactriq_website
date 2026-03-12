@@ -1,4 +1,11 @@
 {
+  "intro": {
+    "title": "Answers to Common Questions",
+    "subtitle": "Need answers? We’ve got you covered.",
+    "description": "Here are some of the most common questions people ask us. If you can’t find what you’re looking for, feel free to reach out.",
+    "buttonText": "Contact us",
+    "buttonLink": "/contact"
+  },
   "faqs": [
     {
       "question": "Who is Mactriq for?",

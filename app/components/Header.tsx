@@ -35,11 +35,11 @@ export default function Header() {
         <div className="hidden md:block">
           <Link href="/contact">
             <button
-              className="px-6 py-2 rounded-full text-white font-medium
+              className="px-6 py-3 rounded-full text-white font-medium
               bg-gradient-to-r from-blue-500 to-blue-400
-              hover:scale-105 transition-transform duration-300 shadow-lg"
+              hover:scale-105 transition-transform duration-300 shadow-lg cursor-pointer"
             >
-              Contact
+              Contact us
             </button>
           </Link>
         </div>
@@ -72,7 +72,7 @@ export default function Header() {
             </Link>
 
             <Link href="/contact" onClick={() => setOpen(false)}>
-              <button className="w-full mt-2 px-6 py-3 rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-400">
+              <button className="w-full mt-2 px-6 py-3 rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-400 cursor-pointer">
                 Contact us
               </button>
             </Link>

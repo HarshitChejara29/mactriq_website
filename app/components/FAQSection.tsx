@@ -47,32 +47,33 @@ export default function FAQSection() {
         {/* LEFT SIDE */}
         <motion.div variants={item} className="flex flex-col h-full">
 
-          <h2 className="text-3xl md:text-5xl font-semibold text-[#1F3F5C] leading-tight">
-            Your question <br className="hidden md:block"/> answered
-          </h2>
+          <h2
+            className="text-3xl md:text-5xl font-semibold text-[#1F3F5C] leading-tight"
+            dangerouslySetInnerHTML={{ __html: faqData.intro.title }}
+          />
 
           <div className="mt-8 md:mt-auto">
 
             <p className="text-lg md:text-xl font-semibold text-[#1F3F5C]">
-              Need answers? We’ve got you covered.
+              {faqData.intro.subtitle}
             </p>
 
             <p className="mt-4 text-[#6C7A89] max-w-md text-sm md:text-base">
-              Below are some of the most common questions people ask us. If you
-              can’t find what you're looking for, feel free to reach out!
+              {faqData.intro.description}
             </p>
 
-            <Link href="/contact">
+            <Link href={faqData.intro.buttonLink}>
               <button
                 className="mt-6 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-medium
                 bg-gradient-to-r from-blue-500 to-blue-400
-                hover:scale-105 transition-transform duration-300 shadow-lg"
+                hover:scale-105 transition-transform duration-300 shadow-lg cursor-pointer"
               >
-                Contact us
+                {faqData.intro.buttonText}
               </button>
             </Link>
 
           </div>
+
         </motion.div>
 
         {/* RIGHT FAQ */}
@@ -85,12 +86,14 @@ export default function FAQSection() {
               <motion.div
                 key={index}
                 variants={item}
-                className="border border-gray-200 rounded-xl bg-white p-4 md:p-6"
+                className={`border border-gray-200 rounded-xl p-4 md:p-6 transition-colors duration-300 shadow-sm
+                  ${isOpen ? "bg-[#F7F9FB]" : "bg-white"}
+                `}
               >
 
                 <button
                   onClick={() => toggle(index)}
-                  className="flex w-full justify-between items-center text-left"
+                  className="flex w-full justify-between items-center text-left cursor-pointer"
                 >
 
                   <span className="text-base md:text-lg font-medium text-[#1F3F5C] pr-4">

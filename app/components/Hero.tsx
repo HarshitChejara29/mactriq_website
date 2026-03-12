@@ -71,7 +71,7 @@ export default function Hero() {
               <button
                 className="mt-8 px-6 py-3 md:px-8 md:py-4 rounded-full text-white font-medium
                 bg-gradient-to-r from-blue-500 to-blue-400
-                hover:scale-105 transition-transform duration-300 shadow-lg"
+                hover:scale-105 transition-transform duration-300 shadow-lg cursor-pointer"
               >
                 {hero.button}
               </button>

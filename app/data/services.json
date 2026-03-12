@@ -3,7 +3,7 @@
     {
       "title": "Autonomous Systems Engineering",
       "description": "We design and implement autonomous physical systems that operate under uncertainty.",
-      "image": "/services/Service1.png",
+      "image": "/services/service_1.png",
       "points": [
         "closed-loop control systems",
         "edge-first architectures",
@@ -15,7 +15,7 @@
     {
       "title": "Industrial & IoT System Stabilization",
       "description": "Many industrial and IoT systems technically work, but require constant human intervention to keep running.",
-      "image": "/services/Service2.png",
+      "image": "/services/service_2.png",
       "points": [
         "diagnose instability and failure modes",
         "harden control logic and state handling",
@@ -26,7 +26,7 @@
     {
       "title": "Edge & Control Architecture Design",
       "description": "Architecture design for systems where decisions must be made close to the physical world.",
-      "image": "/services/Service3.png",
+      "image": "/services/service_3.png",
       "points": [
         "embedded and edge controllers",
         "real-time event handling",
@@ -38,7 +38,7 @@
     {
       "title": "Technical Diagnostics & Risk Reviews",
       "description": "Short, paid diagnostic engagements to understand why a system behaves unpredictably or requires manual supervision.",
-      "image": "/services/Service4.png",
+      "image": "/services/service_4.png",
       "points": [
         "clear failure-mode analysis",
         "automation feasibility boundaries",

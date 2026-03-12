@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "title": "Chat with Us",
+      "description": "Talk to our product experts.",
+      "value": "contact@mactriq.com",
+      "link": "mailto:contact@mactriq.com",
+      "icon": "message"
+    },
+    {
+      "title": "Visit Our Office",
+      "description": "Stop by and meet the team.",
+      "value": "511, International Finance Center, VIP Road, Surat Gujarat - 395007",
+      "link": "https://maps.google.com/?q=511 International Finance Center VIP Road Surat Gujarat 395007",
+      "icon": "map"
+    },
+    {
+      "title": "Call with Sales",
+      "description": "Connect with our team.",
+      "value": "+91 76002-45497",
+      "link": "tel:+917600245497",
+      "icon": "phone"
+    }
+  ]
+}

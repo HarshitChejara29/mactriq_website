@@ -3,6 +3,7 @@
 import { MessageCircle, MapPin, Phone } from "lucide-react";
 import CTASection from "../components/CTASection";
 import { motion, Variants } from "framer-motion";
+import contactData from "../data/contactCards.json";
 
 export default function ContactPage() {
 
@@ -27,6 +28,12 @@ export default function ContactPage() {
     }
   };
 
+  const iconMap: any = {
+    message: MessageCircle,
+    map: MapPin,
+    phone: Phone
+  };
+
   return (
     <>
       <CTASection />
@@ -42,79 +49,44 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
 
-            {/* Chat with Sales */}
-            <motion.div
-              variants={item}
-              className="bg-white rounded-3xl border border-gray-200 p-6 md:p-10 shadow-sm"
-            >
+            {contactData.contacts.map((card, index) => {
 
-              <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-[#eef3f7] mb-5 md:mb-6">
-                <MessageCircle size={26} className="text-[#1F3F5C]" />
-              </div>
+              const Icon = iconMap[card.icon];
 
-              <h3 className="text-xl md:text-3xl font-semibold text-[#1F3F5C]">
-                Chat with Sales
-              </h3>
+              return (
 
-              <p className="text-[#6C7A89] text-sm">
-                Talk to our product experts.
-              </p>
+                <motion.a
+                  key={index}
+                  variants={item}
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-3xl border border-gray-200 p-6 md:p-10 shadow-sm"
+                >
 
-              <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-[#1F3F5C]">
-                contact@mactriq.com
-              </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-[#eef3f7]">
+                      <Icon size={26} className="text-[#1F3F5C]" />
+                    </div>
 
-            </motion.div>
+                    <div>
+                      <h3 className="text-base md:text-lg font-semibold text-[#1F3F5C]">
+                        {card.title}
+                      </h3>
+                      <p className="text-[#6C7A89] text-sm">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="my-4 border-t border-gray-200 lg:mt-8 mt-6"></div>
+                  <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-[#1F3F5C] leading-relaxed">
+                    {card.value}
+                  </p>
 
-            {/* Visit Office */}
-            <motion.div
-              variants={item}
-              className="bg-white rounded-3xl border border-gray-200 p-6 md:p-10 shadow-sm"
-            >
+                </motion.a>
 
-              <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-[#eef3f7] mb-5 md:mb-6">
-                <MapPin size={26} className="text-[#1F3F5C]" />
-              </div>
-
-              <h3 className="text-xl md:text-3xl font-semibold text-[#1F3F5C]">
-                Visit Our Office
-              </h3>
-
-              <p className="text-[#6C7A89] text-sm">
-                Stop by and meet the team.
-              </p>
-
-              <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-[#1F3F5C] leading-relaxed">
-                511, International Finance Center,
-                <br />
-                VIP Road, Surat Gujarat - 395007
-              </p>
-
-            </motion.div>
-
-            {/* Call with Sales */}
-            <motion.div
-              variants={item}
-              className="bg-white rounded-3xl border border-gray-200 p-6 md:p-10 shadow-sm"
-            >
-
-              <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-[#eef3f7] mb-5 md:mb-6">
-                <Phone size={26} className="text-[#1F3F5C]" />
-              </div>
-
-              <h3 className="text-xl md:text-3xl font-semibold text-[#1F3F5C]">
-                Call with Sales
-              </h3>
-
-              <p className="text-[#6C7A89] text-sm">
-                Connect with our team.
-              </p>
-
-              <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-[#1F3F5C]">
-                +91 76002-45497
-              </p>
-
-            </motion.div>
+              )
+            })}
 
           </div>
 

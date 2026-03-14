@@ -50,18 +50,42 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  const [success, setSuccess] = useState(false);
 
-    const { firstName, lastName, email, phone, message } = formData;
+  const handleSubmit = async (e: any) => {
+  e.preventDefault();
 
-    if (!firstName || !lastName || !email || !phone || !message) {
-      alert("Please fill all fields");
-      return;
-    }
+  const { firstName, lastName, email, phone, message } = formData;
 
-    console.log("Form Submitted:", formData);
-  };
+  if (!firstName || !lastName || !email || !phone || !message) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
+    setSuccess(true);
+
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  } else {
+    alert("Something went wrong");
+  }
+};
 
   return (
     <>
@@ -237,6 +261,30 @@ export default function ContactPage() {
       </section>
 
       <CTASection />
+
+      {success && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+          <div className="bg-white rounded-2xl p-8 max-w-sm text-center shadow-xl">
+
+            <h3 className="text-2xl font-semibold text-[#1F3F5C]">
+              Form Submitted 🎉
+            </h3>
+
+            <p className="text-[#6C7A89] mt-2">
+              Thank you! We'll get back to you soon.
+            </p>
+
+            <button
+              onClick={() => setSuccess(false)}
+              className="mt-6 px-6 py-2 rounded-full text-white
+              bg-gradient-to-r from-blue-500 to-blue-400"
+            >
+              Close
+            </button>
+
+          </div>
+        </div>
+      )}
 
     </>
   );

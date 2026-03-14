@@ -29,7 +29,7 @@ export default function CTASection() {
 
   return (
     <section
-      className="relative py-36 bg-center bg-cover bg-no-repeat lg:px-0 px-4"
+      className="relative py-30 bg-center bg-cover bg-no-repeat lg:px-0 px-4"
       style={{ backgroundImage: `url(${cta.background})` }}
     >
 

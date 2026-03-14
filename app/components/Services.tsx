@@ -11,7 +11,7 @@ export default function Services() {
     <section className="py-16 lg:py-24 bg-[#f7f9fc] px-4 lg:px-0" id="services">
       <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#1F3F5C] mb-12 lg:mb-20">
+        <h2 className="text-center text-3xl md:text-5xl font-semibold text-[#1F3F5C] mb-12 lg:mb-20">
           What We Work On
         </h2>
 

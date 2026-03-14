@@ -4,6 +4,7 @@ import { MessageCircle, MapPin, Phone } from "lucide-react";
 import CTASection from "../components/CTASection";
 import { motion, Variants } from "framer-motion";
 import contactData from "../data/contactCards.json";
+import { useState } from "react";
 
 export default function ContactPage() {
 
@@ -34,20 +35,156 @@ export default function ContactPage() {
     phone: Phone
   };
 
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    const { firstName, lastName, email, phone, message } = formData;
+
+    if (!firstName || !lastName || !email || !phone || !message) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    console.log("Form Submitted:", formData);
+  };
+
   return (
     <>
-      <CTASection />
 
-      <section className="lg:py-16 py-6 md:py-20 lg:px-0 px-4 bg-white">
+      {/* Heading */}
+      <section className="md:pt-40 pt-28 md:pb-20 pb-10 text-center bg-[#f7f9fb]">
+        <h1 className="text-3xl md:text-5xl font-semibold text-[#1F3F5C]">
+          Contact Us
+        </h1>
+        <p className="mt-2 text-[#6C7A89]">We're here to help.</p>
+      </section>
+
+      {/* Main Contact Section */}
+      <section className="pb-20 bg-[#f7f9fb] lg:px-0 px-4">
+
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, margin: "-120px" }}
-          className="max-w-7xl mx-auto"
+          className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8"
         >
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+          {/* LEFT CONTACT FORM */}
+          <motion.div
+            variants={item}
+            className="lg:col-span-2 bg-white rounded-3xl border border-gray-200 p-6 md:p-10 shadow-sm"
+          >
+
+            <h2 className="text-2xl md:text-3xl font-semibold text-[#1F3F5C] mb-8">
+              Get in touch with us
+            </h2>
+
+            <form className="space-y-5" onSubmit={handleSubmit}>
+
+              <div className="grid md:grid-cols-2 gap-4">
+
+                <div>
+                  <label className="text-sm text-[#6C7A89]">First Name</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    required
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="Enter Your First Name"
+                    className="w-full mt-2 border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm text-[#6C7A89]">Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Enter Your Last Name"
+                    className="w-full mt-2 border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                </div>
+
+              </div>
+
+              <div>
+                <label className="text-sm text-[#6C7A89]">Work email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter Your Email"
+                  className="w-full mt-2 border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm text-[#6C7A89]">Phone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  required
+                  maxLength={10}
+                  value={formData.phone}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, "");
+                    setFormData({ ...formData, phone: value });
+                  }}
+                  placeholder="Enter Your Phone No."
+                  className="w-full mt-2 border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm text-[#6C7A89]">Message</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="What do you have on your mind?"
+                  className="w-full mt-2 border border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+
+              <button
+                className="w-full mt-4 py-4 rounded-full text-white font-medium
+                bg-gradient-to-r from-blue-500 to-blue-400
+                hover:scale-[1.02] transition shadow-lg"
+              >
+                Submit
+              </button>
+
+            </form>
+
+          </motion.div>
+
+
+          {/* RIGHT CONTACT CARDS */}
+          <div className="g:col-span-1 flex flex-col gap-6">
 
             {contactData.contacts.map((card, index) => {
 
@@ -61,27 +198,32 @@ export default function ContactPage() {
                   href={card.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white rounded-3xl border border-gray-200 p-6 md:p-10 shadow-sm"
+                  className="bg-white rounded-3xl border border-gray-200 p-6 shadow-sm"
                 >
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-2xl bg-[#eef3f7]">
-                      <Icon size={26} className="text-[#1F3F5C]" />
+                  {/* <div className="flex items-start gap-4"> */}
+
+                    <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#eef3f7]">
+                      <Icon size={24} className="text-[#1F3F5C]" />
                     </div>
 
-                    <div>
-                      <h3 className="text-base md:text-lg font-semibold text-[#1F3F5C]">
+                    {/* <div> */}
+
+                      <h3 className="text-lg font-semibold text-[#1F3F5C] mt-4">
                         {card.title}
                       </h3>
+
                       <p className="text-[#6C7A89] text-sm">
                         {card.description}
                       </p>
-                    </div>
-                  </div>
-                  <div className="my-4 border-t border-gray-200 lg:mt-8 mt-6"></div>
-                  <p className="mt-5 md:mt-6 text-base md:text-lg font-semibold text-[#1F3F5C] leading-relaxed">
-                    {card.value}
-                  </p>
+
+                      <p className="mt-4 text-[#1F3F5C] font-semibold text-sm md:text-base leading-relaxed">
+                        {card.value}
+                      </p>
+
+                    {/* </div> */}
+
+                  {/* </div> */}
 
                 </motion.a>
 
@@ -91,7 +233,11 @@ export default function ContactPage() {
           </div>
 
         </motion.div>
+
       </section>
+
+      <CTASection />
+
     </>
   );
 }

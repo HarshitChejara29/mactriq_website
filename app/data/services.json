@@ -2,48 +2,49 @@
   "services": [
     {
       "title": "Autonomous Systems Engineering",
-      "description": "We design and implement autonomous physical systems that operate under uncertainty.",
+      "description": "We design systems that can operate on their own with minimal human supervision, even in uncertain or changing environments.",
       "image": "/services/service_1.png",
       "points": [
-        "closed-loop control systems",
-        "edge-first architectures",
-        "sensor fusion and telemetry",
-        "fault detection and recovery",
-        "safely reducing human intervention"
+        "Designing systems that monitor themselves and adjust automatically",
+        "Edge-based control systems for fast real-world responses",
+        "Combining data from multiple sensors for reliable decision making",
+        "Detecting problems early and enabling automatic recovery",
+        "Reducing the need for constant manual control or monitoring"
       ]
     },
     {
       "title": "Industrial & IoT System Stabilization",
-      "description": "Many industrial and IoT systems technically work, but require constant human intervention to keep running.",
+      "description": "Many industrial or IoT systems technically work, but require frequent manual fixes or supervision. We help make these systems stable, reliable, and easier to operate.",
       "image": "/services/service_2.png",
       "points": [
-        "diagnose instability and failure modes",
-        "harden control logic and state handling",
-        "reduce crashes, resets, and manual overrides",
-        "improve uptime and operational confidence"
+        "Finding the root cause of crashes, instability, or unexpected behavior",
+        "Improving system logic and control flow",
+        "Reducing resets, failures, and manual overrides",
+        "Increasing system uptime and reliability",
+        "Making systems easier for teams to operate with confidence"
       ]
     },
     {
       "title": "Edge & Control Architecture Design",
-      "description": "Architecture design for systems where decisions must be made close to the physical world.",
+      "description": "We design system architectures where important decisions must happen close to the physical device, not just in the cloud.",
       "image": "/services/service_3.png",
       "points": [
-        "embedded and edge controllers",
-        "real-time event handling",
-        "telemetry pipelines",
-        "cloud-edge coordination",
-        "safety and fallback paths"
+        "Designing embedded and edge controller architectures",
+        "Handling real-time events and physical system responses",
+        "Creating reliable telemetry and monitoring pipelines",
+        "Coordinating cloud services with edge devices",
+        "Implementing safety mechanisms and fallback systems"
       ]
     },
     {
       "title": "Technical Diagnostics & Risk Reviews",
-      "description": "Short, paid diagnostic engagements to understand why a system behaves unpredictably or requires manual supervision.",
+      "description": "Short diagnostic engagements to understand why a system behaves unpredictably or requires constant human supervision.",
       "image": "/services/service_4.png",
       "points": [
-        "clear failure-mode analysis",
-        "automation feasibility boundaries",
-        "explicit non-automation recommendations",
-        "prioritized next steps"
+        "Clear analysis of failure modes and instability issues",
+        "Honest evaluation of what can and cannot be automated",
+        "Practical recommendations to reduce operational risk",
+        "A prioritized action plan for improving the system"
       ]
     }
   ]

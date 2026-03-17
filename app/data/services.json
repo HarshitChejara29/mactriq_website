@@ -2,49 +2,49 @@
   "services": [
     {
       "title": "Autonomous Systems Engineering",
-      "description": "We design systems that can operate on their own with minimal human supervision, even in uncertain or changing environments.",
+      "description": "We build autonomous systems that adapt to real-world changes, reducing manual oversight while ensuring consistent performance.",
       "image": "/services/service_1.png",
       "points": [
-        "Designing systems that monitor themselves and adjust automatically",
-        "Edge-based control systems for fast real-world responses",
-        "Combining data from multiple sensors for reliable decision making",
-        "Detecting problems early and enabling automatic recovery",
-        "Reducing the need for constant manual control or monitoring"
+        "Systems that monitor themselves and adjust in real time",
+        "Edge-first control for faster, on-the-ground decisions",
+        "Sensor-driven intelligence for clearer, more reliable inputs",
+        "Early issue detection with built-in recovery",
+        "Reduced dependence on constant human intervention"
       ]
     },
     {
       "title": "Industrial & IoT System Stabilization",
-      "description": "Many industrial or IoT systems technically work, but require frequent manual fixes or supervision. We help make these systems stable, reliable, and easier to operate.",
+      "description": "We turn unstable industrial and IoT systems into reliable, easy-to-run operations with fewer breakdowns and less intervention.",
       "image": "/services/service_2.png",
       "points": [
-        "Finding the root cause of crashes, instability, or unexpected behavior",
-        "Improving system logic and control flow",
-        "Reducing resets, failures, and manual overrides",
-        "Increasing system uptime and reliability",
-        "Making systems easier for teams to operate with confidence"
+        "Fixing the root cause behind crashes and unstable behavior",
+        "Simplifying system logic for smoother performance",
+        "Reducing failures, resets, and manual intervention",
+        "Increasing uptime you can actually depend on",
+        "Making systems easier for teams to run with confidence"
       ]
     },
     {
       "title": "Edge & Control Architecture Design",
-      "description": "We design system architectures where important decisions must happen close to the physical device, not just in the cloud.",
+      "description": "We design systems that respond in real time near the device, enabling faster reactions, better control, and more reliable performance.",
       "image": "/services/service_3.png",
       "points": [
-        "Designing embedded and edge controller architectures",
-        "Handling real-time events and physical system responses",
-        "Creating reliable telemetry and monitoring pipelines",
-        "Coordinating cloud services with edge devices",
-        "Implementing safety mechanisms and fallback systems"
+        "Edge architectures built for real-world responsiveness",
+        "Real-time handling of events and system behavior",
+        "Clear, reliable monitoring and data flow",
+        "Seamless coordination between edge devices and the cloud",
+        "Built-in safeguards and fallback systems for stability"
       ]
     },
     {
       "title": "Technical Diagnostics & Risk Reviews",
-      "description": "Short diagnostic engagements to understand why a system behaves unpredictably or requires constant human supervision.",
+      "description": "We quickly get to the root of unstable systems and constant manual intervention. No fluff, just clear answers and practical next steps.",
       "image": "/services/service_4.png",
       "points": [
-        "Clear analysis of failure modes and instability issues",
-        "Honest evaluation of what can and cannot be automated",
-        "Practical recommendations to reduce operational risk",
-        "A prioritized action plan for improving the system"
+        "Pinpointing what’s causing failures and unpredictable behavior",
+        "Clear view of what can (and can’t) be automated",
+        "Practical steps to reduce risk and improve stability",
+        "A focused action plan you can actually execute"
       ]
     }
   ]
